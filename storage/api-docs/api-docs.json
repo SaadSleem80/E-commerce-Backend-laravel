@@ -1,0 +1,213 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "E-commerce APIs Documentation",
+        "description": "L5 Swagger OpenAPI Documentation for Laravel API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/colors": {
+            "get": {
+                "tags": [
+                    "Colors"
+                ],
+                "summary": "Get all colors",
+                "operationId": "31594124a70c408c15ed886f4c8727ea",
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Paginate the Data",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "Per page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "description": "Order by",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "description": "Order",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all colors"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Colors"
+                ],
+                "summary": "Create a new color",
+                "operationId": "ebf9e0ef5d3d0f294576f57366cac16e",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ColorCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create a new color"
+                    }
+                }
+            }
+        },
+        "/api/v1/colors/{id}": {
+            "get": {
+                "tags": [
+                    "Colors"
+                ],
+                "summary": "Get a color by id",
+                "operationId": "95333ed602b25f6563341fbd3dbeb0cc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the color",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get a color by id"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Colors"
+                ],
+                "summary": "Update a color",
+                "operationId": "1359c62ea7bc1043fdcbcdc6ae9eae9f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the color",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ColorUpdateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update a color"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Colors"
+                ],
+                "summary": "Delete a color",
+                "operationId": "be49e09403cb487a655cd463c7185e46",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the color",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete a color"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ColorCreateRequest": {
+                "required": [
+                    "name",
+                    "hex_code"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "maxLength": 255
+                        }
+                    },
+                    "hex_code": {
+                        "type": "string",
+                        "minLength": 4
+                    }
+                },
+                "type": "object"
+            },
+            "ColorUpdateRequest": {
+                "required": [
+                    "name",
+                    "hex_code"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "maxLength": 255
+                        }
+                    },
+                    "hex_code": {
+                        "type": "string",
+                        "minLength": 4
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Colors",
+            "description": "Colors"
+        }
+    ]
+}
