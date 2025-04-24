@@ -15,6 +15,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/', [ColorsController::class, 'index']);
         Route::get('/{id}', [ColorsController::class, 'show']);
     });
+    
 });
 
 // Protected Routes
